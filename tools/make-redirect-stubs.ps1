@@ -104,8 +104,17 @@ $written = 0
 foreach ($old in $map.Keys) {
   $target = $map[$old]
   $html   = New-Stub $target
-  # The old site is served from /docs, but keep the source tree in step too.
-  foreach ($base in @($OldRepo, (Join-Path $OldRepo 'docs'))) {
+  # The old site is served from /docs, so that is what must carry the stubs.
+  # Only blog/posts/*.html also exists at the repo root, as a source resource
+  # copied into docs/ on render -- update both of those. Everywhere else the
+  # root holds .qmd sources, and writing .html beside them would just create
+  # inert duplicates that confuse anyone reading the repo later.
+  $bases = if ($old -like 'blog/posts/*') {
+             @($OldRepo, (Join-Path $OldRepo 'docs'))
+           } else {
+             @((Join-Path $OldRepo 'docs'))
+           }
+  foreach ($base in $bases) {
     $path = Join-Path $base $old
     $dir  = Split-Path $path -Parent
     if ($WhatIf) { Write-Host "would write $path -> $target"; continue }
