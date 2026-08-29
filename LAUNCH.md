@@ -42,40 +42,75 @@ deploy job prints — it will be `https://mattykuch.github.io/matthewkuch.com/`.
 
 **Check the site works there before touching DNS.**
 
-## Step 4 — DNS at ecowebhosting
+## Step 4 — DNS via Cloudflare
 
-In <https://my.ecowebhosting.co.uk> → **Domains → My Domains → matthewkuch.com**.
+> **Why not ecowebhosting.** The domain was registered there without a hosting
+> package, so eco never created a DNS zone for it. Their nameservers
+> (`ns1–ns4.hpdns.net`) answer `REFUSED` for matthewkuch.com, which is why their
+> DNS Management page shows "NS Lookup Failed". The registry side is healthy —
+> status is only `client transfer prohibited`, the normal 60-day lock. The fix
+> is to keep the registration at eco and move the nameservers to Cloudflare,
+> which also gets you AAAA, TXT and low-TTL support that eco's panel may lack.
 
-The DNS record editor is usually inside the hosting control panel (StackCP →
-DNS Management), not on the domain page itself. Since matthewkuch.com was
-registered without a hosting package, that editor may not be reachable. If you
-cannot find it, see "If ecowebhosting will not let you edit DNS" below.
+> **Also do this, separately:** click the link in eco's "Verification Required"
+> email (deadline 13/09/2026). That is an ICANN registrant check. It is not what
+> is blocking DNS today, but missing it suspends the domain.
 
-**First delete any existing `A` or `CNAME` record on `@` or `www`.** Eco
-provisions a parked page by default, and a leftover record makes the domain
-flip between GitHub and their parking page, which also blocks the HTTPS
-certificate.
+### 4a. Add the domain to Cloudflare
 
-Then add these. Set TTL low (300–600 seconds) for the cutover; you can raise it
-later.
+1. Create a free account at <https://dash.cloudflare.com/sign-up>.
+2. **Add a domain** → `matthewkuch.com` → choose the **Free** plan.
+3. Cloudflare scans for existing records and will find **none**. That is expected
+   — there is no zone to import. Continue.
 
-| Type | Host | Value |
-|---|---|---|
-| A | @ | `185.199.108.153` |
-| A | @ | `185.199.109.153` |
-| A | @ | `185.199.110.153` |
-| A | @ | `185.199.111.153` |
-| AAAA | @ | `2606:50c0:8000::153` |
-| AAAA | @ | `2606:50c0:8001::153` |
-| AAAA | @ | `2606:50c0:8002::153` |
-| AAAA | @ | `2606:50c0:8003::153` |
-| CNAME | www | `mattykuch.github.io.` |
+### 4b. Add the records
 
-The `www` CNAME points at your **account** domain with no repo name on the end.
-GitHub works out which repo to serve from the `CNAME` file in this repo.
+In Cloudflare → **DNS → Records → Add record**. Add these nine.
 
-The AAAA (IPv6) records are optional. If eco's panel does not support them,
-skip them — the site still works.
+| Type | Name | Content | Proxy |
+|---|---|---|---|
+| A | `@` | `185.199.108.153` | **DNS only** |
+| A | `@` | `185.199.109.153` | **DNS only** |
+| A | `@` | `185.199.110.153` | **DNS only** |
+| A | `@` | `185.199.111.153` | **DNS only** |
+| AAAA | `@` | `2606:50c0:8000::153` | **DNS only** |
+| AAAA | `@` | `2606:50c0:8001::153` | **DNS only** |
+| AAAA | `@` | `2606:50c0:8002::153` | **DNS only** |
+| AAAA | `@` | `2606:50c0:8003::153` | **DNS only** |
+| CNAME | `www` | `mattykuch.github.io` | **DNS only** |
+
+> **The proxy toggle must be grey ("DNS only"), not orange.** This is the one
+> mistake that breaks everything: an orange-clouded record makes Cloudflare
+> terminate TLS itself, which stops GitHub from issuing its certificate and can
+> cause redirect loops. Click the orange cloud on each record to turn it grey.
+
+Leave TTL on **Auto**. Delete anything else Cloudflare pre-populated on `@` or
+`www`.
+
+### 4c. Point the nameservers at Cloudflare
+
+Cloudflare shows you two nameservers, like `alice.ns.cloudflare.com` and
+`bob.ns.cloudflare.com`. Then in eco:
+
+**Domains → My Domains → matthewkuch.com → Nameservers**
+
+1. Select **Use custom nameservers**.
+2. Nameserver 1 and 2 = the two Cloudflare names. **Clear fields 3, 4 and 5** —
+   leaving `ns3.hpdns.net` / `ns4.hpdns.net` in place will break resolution.
+3. **Change Nameservers**.
+
+Back in Cloudflare, click **Check nameservers**. It emails you when the zone goes
+**Active** — usually minutes, occasionally a few hours.
+
+### 4d. Confirm it resolves
+
+```powershell
+Resolve-DnsName matthewkuch.com -Type A -Server 8.8.8.8
+Resolve-DnsName www.matthewkuch.com -Server 8.8.8.8
+```
+
+Expect the four `185.199.x.153` addresses on the apex, and `www` resolving via
+`mattykuch.github.io`. Do not move on until this works.
 
 ## Step 5 — Point GitHub at the domain
 
@@ -103,17 +138,6 @@ Then load two or three old project pages —
 `https://mattykuch.github.io/ugmap/`, `/crimeviz/` — and confirm they still
 work. They should; this is the one thing worth eyeballing.
 
-### If ecowebhosting will not let you edit DNS
-
-Registration stays with eco; you just move the nameservers:
-
-1. Create a free Cloudflare account and add `matthewkuch.com`.
-2. Add the records from Step 4 there, with the proxy **off** (grey cloud, "DNS
-   only"). GitHub must terminate TLS itself.
-3. In eco: **Domains → My Domains → Manage → Nameservers → custom**, and enter
-   the two Cloudflare nameservers Cloudflare gives you.
-
-Alternatively, raise a support ticket with eco and ask them to add the records.
 
 ---
 
