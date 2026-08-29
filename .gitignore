@@ -19,3 +19,13 @@ Thumbs.db
 /_import/
 
 **/*.quarto_ipynb
+
+# Personal working files — kept local, deliberately not published.
+# None of these are needed to build the site.
+/LAUNCH.md
+/How-to-Add-a-Blog-Post.md
+/How-to-Add-a-Blog-Post.docx
+/CLAUDE.md
+/new-post.ps1
+/tools/
+/.claude/
