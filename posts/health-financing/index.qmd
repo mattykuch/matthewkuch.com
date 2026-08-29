@@ -1,0 +1,82 @@
+---
+title: "The Cost of Staying Alive in Uganda"
+date: "2025-05-06"
+categories: [Health Financing]
+image: "images/cost-of-staying-alive.png"
+image-alt: "A Ugandan hospital bill, illustrating the cost of staying alive"
+description: "A personal story about what a USD 130 hospital bill reveals about Uganda's health financing."
+toc: false
+freeze: true
+---
+
+A few month ago, my Mom had stroke.
+
+It happened in our village, Pacego in Pakwach district, a quiet stretch of North Western Uganda where the River Nile takes its time and most locals tend to do the same. My mother is retired and living a mostly peaceful existence. The kind of life you imagine when when you think of someone easing into their later years.
+
+Then came the stroke.
+
+No warning. Just the quiet attack of two deadly enemies many don't see coming - high blood pressure and diabetes. Neither screams or shows up when you expect. However when they do arrive, they demand attention you're rarely prepared to give.
+
+My siblings and I raced up North to Pakwach from Kampala, terrified but trying not to show it. Once we reached, we got her admitted into a private clinic in Pakwach town. She was stabilized, spent the night being monitored, and was discharged the following day. We took her home. The bill was 489,200 Ugandan shillings. About \$130.
+
+That \$130 is now the most important money I’ve ever spent.
+
+But here’s the thing that won’t leave me alone: my mother survived the worst because we had that money. Many people's mothers don't survive because they simply didn't have the cash to pay for better treatment. This is a common experience in Uganda, where survival is often about how much cash is in your pocket.
+
+That’s a terrifying way to live.
+
+## **When Health Systems Fail Us**
+
+Most people think of the healthcare system in terms of Infrastructure, Budget allocations and Medical Personnel. But its really about whether your mother gets to come home. It’s about whether your neighbor dies quietly because they couldn’t afford their medication. That's the really impact of a failing system.
+
+Between 2012 and 2022, Uganda’s government health spending per person barely changed and has hovered around USD 10 per person, while this same measure doubled for our neighbors in Kenya (\$21 to \$42 per person) and Rwanda (\$15 to \$27 per person).
+
+```{r child = "eac-health-exp-line.Rmd"}
+#| warning: false
+#| message: false
+
+```
+
+That stagnation in government health spending doesn’t show up in newspaper headlines, but it shows up in empty drug shelves, exhausted health workers, and mothers praying their child's fever breaks because they can’t afford to treat it. In Uganda, when illness comes, debt is usually not far behind, and if debt doesn't come, death just might...
+
+In more advanced economies,seeking healthcare feels like being on a conveyor belt of a well oiled mechanical system, that just works like clock-work. Here, it feels like a gamble, between life and death.
+
+## **Systems Do Exactly What They’re Designed To Do.**
+
+Our innate tendency is to assume failure comes from chaos or neglect. However, most of the time, systems work the way they were built. If the healthcare system leaves people behind, it’s because that’s how we’ve chosen (passively or otherwise) for it to function.
+
+But its not all doom and gloom, here’s the hopeful part: Anything built by humans can be redesigned and rebuilt.
+
+We could, for instance:
+
+-   **Double down on prevention.** High blood pressure and diabetes don’t need to be death sentences if we screen ourselves early and improve health education and sensitization. These are thought of as boring interventions, until they save someone you love.
+
+-   **Align incentives.** Since its human beings (specifically leaders) that make decisions about how resources are allocated, and these same leaders (politicians and industrialists) will only change if they are incentivized. We have to accept the simple fact that policy decisions and resource allocations are based more on political and economic incentives than social incentives, hence our focus should be on strategically aligning the three.
+
+-   **Honor our promises.** In 2001, Uganda and many other African countries committed to spending 15% of the national budget on health under the Abuja Declaration. We have never got close. To change the tide, that promise has to be kept because its an indicator of what we value and prioritize as a country: Health first, before everything else.
+
+-   **Learn from Rwanda.** Their national health insurance works. Ours doesn’t exist. Theirs proves it can be done. The only difference is values, priorities and execution.
+
+## **What We’re Actually Talking About**
+
+This story isn’t about my mother. It’s not even about health.
+
+It’s about about what the Ugandan Lawyer, David F.K. Mpanga, calls having a central nervous system to feel each others pain.
+
+![David Mpanga Post on X](images/dmpanga-quote.jpg)
+
+It’s about whether a nation believes that the poor deserve to live as much as the rich. It’s about the difference between life and death.
+
+The poor in Uganda aren't asking for miracles. They’re asking for the basics because in many cases, they’re paying for those basics out of pocket, at the exact moment they’re least able to afford them.
+
+If we wait for a perfect solution, we’ll still be waiting for another ten years. However, small, clear, and immediate action could start rewriting this story tomorrow.
+
+My mother lived because of \$130. That number haunts me - not because it was expensive, but because, for too many people, it’s out of reach.
+
+In the 21st Century, with modern medicine and science, that should never be the reason someone dies.
+
+## References
+
+-   <https://apps.who.int/nha/database/Select/Indicators/en>
+-   <https://www.afro.who.int/publications/who-african-region-health-expenditure-atlas-2023-0>
+-   <https://x.com/dfkm1970/status/761468489206996993>

@@ -1,0 +1,233 @@
+---
+title: "Displacement Effect Analysis in Public Health Financing"
+format: html
+---
+
+```{r}
+# ================================
+# Displacement Effect by Country
+# Years: 2000–2022
+# Region: Sub-Saharan Africa (SSA)
+# Data: GHED_small.xlsx (Sheet1)
+# ================================
+
+# --- Packages ---
+library(readxl)
+library(tidyverse)
+library(broom)
+library(purrr)
+library(scales)
+library(countrycode) # to classify SSA countries
+
+# --- Settings ---
+path_xlsx <- "./output/GHED_small.xlsx"  # adjust path if needed
+sheet_nm  <- "Sheet1"
+yr_min    <- 2000
+yr_max    <- 2022
+
+# --- 1) Load data ---
+raw <- read_excel(path_xlsx, sheet = sheet_nm)
+
+df <- raw %>%
+  transmute(
+    code      = .data$code,
+    location  = .data$location,
+    year      = suppressWarnings(as.integer(.data$year)),
+    gghed_pc  = suppressWarnings(as.numeric(.data$gghed_pc_usd)),
+    ext_pc    = suppressWarnings(as.numeric(.data$ext_pc_usd))
+  ) %>%
+  filter(!is.na(code), !is.na(year)) %>%
+  filter(year >= yr_min, year <= yr_max) %>%
+  arrange(code, year)
+
+# --- 2) Keep only Sub-Saharan African countries ---
+# Use 'countrycode' to map ISO3 to region
+df <- df %>%
+  mutate(region = countrycode(code, origin = "iso3c", destination = "region")) %>%
+  filter(region == "Sub-Saharan Africa")
+
+# --- 3) Keep only countries with full coverage 2000–2022 ---
+years_needed <- yr_max - yr_min + 1
+
+keep_codes <- df %>%
+  group_by(code) %>%
+  summarise(n_years = n_distinct(year), .groups = "drop") %>%
+  filter(n_years == years_needed) %>%
+  pull(code)
+
+df <- df %>% filter(code %in% keep_codes)
+
+# --- 4) Build panel with ΔGov and lag(External) ---
+panel <- df %>%
+  group_by(code) %>%
+  mutate(
+    d_gov_pc   = gghed_pc - lag(gghed_pc),
+    ext_pc_lag = lag(ext_pc)
+  ) %>%
+  ungroup()
+
+usable <- panel %>% filter(!is.na(d_gov_pc), !is.na(ext_pc_lag))
+
+# --- 5) Run country-by-country regressions ---
+fit_one <- function(dat) {
+  m <- lm(d_gov_pc ~ ext_pc_lag, data = dat)
+  broom::tidy(m, conf.int = TRUE) %>% filter(term == "ext_pc_lag") %>%
+    mutate(n_obs = nrow(dat))
+}
+
+results_by_ctry <- usable %>%
+  group_by(code, location) %>%
+  group_modify(~ fit_one(.x)) %>%
+  ungroup() %>%
+  arrange(estimate)
+
+print(results_by_ctry)
+
+# --- 6) Save results ---
+write.csv(results_by_ctry, "displacement_by_country_SSA_2000_2022.csv", row.names = FALSE)
+
+# --- 7) Visualization: Dot-whisker plot ---
+p_coef <- results_by_ctry %>%
+  mutate(label = paste0(code, " — ", location)) %>%
+  ggplot(aes(x = estimate, y = reorder(label, estimate))) +
+  geom_vline(xintercept = 0, linewidth = 0.3) +
+  geom_point() +
+  geom_errorbarh(aes(xmin = conf.low, xmax = conf.high), height = 0.15) +
+  labs(
+    title = "SSA Country-specific displacement slopes (ΔGov ~ lag(External))",
+    x = "US$ change in gov’t pc per +US$1 external pc (lagged)",
+    y = NULL
+  ) +
+  theme_minimal(base_size = 12)
+
+print(p_coef)
+
+
+# --- 8) How to interpret (for your notes)
+# - If Beta < 0 and p-value < 0.05: evidence of displacement for that country and period.
+# - If Beta ~ 0 or CI spans 0: no clear evidence (could be displacement or crowding-in not detectable).
+# - Always check n_obs (the # of usable year-to-year changes): small n makes inference noisy.
+
+
+
+```
+
+
+## Publication Ready Dot-Whisker Chart
+
+```{r}
+# ==========================================
+# Publication-ready Dot–Whisker (SSA, 2000–2022)
+# Input: "displacement_by_country_SSA_2000_2022.csv"
+# Output: PNG + SVG figures
+# ==========================================
+
+library(forcats)
+library(stringr)
+
+# ---- 1) Load & prepare ----
+path_csv <- "./output/displacement_by_country_SSA_2000_2022.csv"
+
+res <- read_csv(path_csv, show_col_types = FALSE) %>%
+  # Expect columns: code, location, term, estimate, std.error, statistic, p.value, conf.low, conf.high, n_obs
+  mutate(
+    label = str_c(location, " (", code, ")"),
+    sig   = p.value < 0.05,
+    # order countries by effect size (left = more negative)
+    label = fct_reorder(label, estimate, .desc = FALSE)
+  )
+
+# Optional: drop obviously broken rows (rare)
+res <- res %>% filter(is.finite(estimate), is.finite(conf.low), is.finite(conf.high))
+
+# Axis limits (pad 10% beyond min/max CI)
+rng  <- range(c(res$conf.low, res$conf.high), na.rm = TRUE)
+pad  <- 0.10 * diff(rng)
+xlim <- c(rng[1] - pad, rng[2] + pad)
+
+# A minimal, publication‑friendly theme
+theme_pub <- function(base_size = 12){
+  theme_minimal(base_size = base_size) +
+    theme(
+      panel.grid.minor = element_blank(),
+      panel.grid.major.y = element_blank(),
+      axis.title.y = element_blank(),
+      axis.title.x = element_text(margin = margin(t = 8)),
+      axis.text.y  = element_text(size = base_size * 0.9),
+      plot.title   = element_text(face = "bold", size = base_size * 1.2, margin = margin(b = 6)),
+      plot.subtitle= element_text(size = base_size * 0.95, margin = margin(b = 10)),
+      plot.caption = element_text(size = base_size * 0.85, color = "grey40"),
+      plot.margin  = margin(10, 16, 10, 16)
+    )
+}
+
+# ---- 2) Plot ----
+# Encoding choices for accessibility:
+# - Reference line at 0.
+# - 95% CI whiskers: solid if significant, dashed if not.
+# - Point: filled black if significant, hollow if not.
+# - No reliance on color = prints well in B/W.
+
+p <- ggplot(res, aes(x = estimate, y = label)) +
+  geom_vline(xintercept = 0, linewidth = 0.4, color = "grey50") +
+
+  # CI whiskers
+  geom_errorbarh(
+    aes(xmin = conf.low, xmax = conf.high, linetype = sig),
+    height = 0.15, linewidth = 0.6, color = "grey20"
+  ) +
+
+  # Point estimate
+  geom_point(
+    aes(fill = sig),
+    shape = 21, size = 2.8, stroke = 0.5, color = "grey10"
+  ) +
+
+  scale_linetype_manual(
+    values = c(`TRUE` = "solid", `FALSE` = "dashed"),
+    labels = c(`TRUE` = "p < 0.05", `FALSE` = "ns"),
+    name   = "Significance"
+  ) +
+  scale_fill_manual(
+    values = c(`TRUE` = "grey10", `FALSE` = "white"),
+    labels = c(`TRUE` = "p < 0.05", `FALSE` = "ns"),
+    name   = "Significance"
+  ) +
+
+  coord_cartesian(xlim = xlim) +
+  scale_x_continuous(
+    breaks = pretty_breaks(6),
+    labels = label_number(accuracy = 0.1)
+  ) +
+
+  labs(
+    title = "Country-specific displacement estimates (SSA, 2000–2022)",
+    subtitle = "Dot = effect of +$1 external pc (t−1) on change in government health spend pc (t) | Whiskers = 95% CI",
+    x = "US$ change in gov’t health spend per capita per +$1 external (lagged 1 year)",
+    caption = "Model per country: ΔGov_pc ~ lag(External_pc). Points filled=significant (p<0.05); open=not significant. Source: WHO GHED."
+  ) +
+  theme_pub(base_size = 12) +
+  guides(fill = guide_legend(order = 1), linetype = guide_legend(order = 2))
+
+# Print to viewer
+print(p)
+
+# ---- 3) Export high-quality outputs ----
+ggsave("dotwhisker_ssa_2000_2022.png", p, width = 8.5, height = 10.5, dpi = 320)
+ggsave("dotwhisker_ssa_2000_2022.svg", p, width = 8.5, height = 10.5)  # vector for print
+
+# ---- 4) (Optional) show top 10 most negative & positive for quick callouts ----
+res %>%
+  arrange(estimate) %>%
+  select(location, code, estimate, conf.low, conf.high, p.value, n_obs) %>%
+  head(10)
+
+res %>%
+  arrange(desc(estimate)) %>%
+  select(location, code, estimate, conf.low, conf.high, p.value, n_obs) %>%
+  head(10)
+
+
+
+```
+

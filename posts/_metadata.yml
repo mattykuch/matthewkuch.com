@@ -1,0 +1,15 @@
+# Shared defaults applied to every post in posts/.
+# Override per-post by setting the same key in that post's front-matter.
+author: "Matthew Kuch"
+
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-title: "Contents"
+    code-fold: false
+    code-tools: false
+    code-copy: false
+    echo: false
+
+freeze: auto

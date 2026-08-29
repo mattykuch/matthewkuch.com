@@ -1,0 +1,87 @@
+name: Render and deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      execute_r:
+        description: "Install R and re-execute all code (ignore _freeze)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.8.27"        # pinned; bump deliberately
+
+      # Posts that execute code must ship frozen results, because R is not
+      # installed below. Fail loudly rather than deploy a missing chart.
+      - name: Check freeze coverage
+        shell: bash
+        run: |
+          missing=0
+          for f in posts/*/index.qmd; do
+            [ -e "$f" ] || continue
+            grep -q '^```{' "$f" || continue
+            slug=$(basename "$(dirname "$f")")
+            if [ ! -f "_freeze/posts/$slug/index/execute-results/html.json" ]; then
+              echo "::error file=$f::No frozen results for '$slug'. Render locally with R on PATH and commit _freeze/."
+              missing=1
+            else
+              echo "ok: $slug has frozen results"
+            fi
+          done
+          exit $missing
+
+      # R is installed only on an explicit manual re-run.
+      - name: Set up R
+        if: ${{ inputs.execute_r }}
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "4.4"
+          use-public-rspm: true
+
+      - name: Install R packages
+        if: ${{ inputs.execute_r }}
+        run: >
+          Rscript -e 'install.packages(c("knitr","rmarkdown","highcharter","tidyverse","readxl"),
+          repos="https://packagemanager.posit.co/cran/latest")'
+
+      - name: Render site
+        run: quarto render ${{ inputs.execute_r && '--execute' || '' }}
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_site"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

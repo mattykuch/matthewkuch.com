@@ -1,0 +1,25 @@
+---
+title: "Blog"
+pagetitle: "Blog — Health Financing & Political Economy"
+description: "Essays on health financing, global health, political economy and supply chains."
+page-layout: full
+toc: false
+listing:
+  id: posts-listing
+  contents: "posts/*/index.qmd"
+  type: grid
+  grid-columns: 3
+  sort: "date desc"
+  sort-ui: true
+  filter-ui: true
+  categories: true
+  fields: [image, date, title, description, categories, reading-time]
+  feed:
+    title: "Matthew Kuch"
+    type: full
+  image-height: "210px"
+  page-size: 12
+---
+
+::: {#posts-listing}
+:::

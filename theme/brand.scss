@@ -1,0 +1,225 @@
+/*-- scss:defaults --*/
+
+// Personal palette — deep slate + teal, warm amber accent.
+// Deliberately not the BK Advisors blue/red.
+$mk-ink:     #1f2933;   // body text
+$mk-slate:   #16303d;   // headings
+$mk-teal:    #0f766e;   // primary / links
+$mk-teal-lt: #14b8a6;
+$mk-amber:   #b45309;   // accent for active/hover
+$mk-mist:    #f6f8f9;   // section wash
+
+$primary:                $mk-teal;
+$body-color:             $mk-ink;
+$link-color:             $mk-teal;
+$link-hover-color:       $mk-amber;
+$navbar-light-bg:        #ffffff;
+
+$font-family-sans-serif: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$headings-font-family:   "Source Sans 3", system-ui, sans-serif;
+$headings-font-weight:   700;
+$headings-color:         $mk-slate;
+$h1-font-size:           2.5rem;
+$card-border-width:      0;
+$card-cap-bg:            transparent;
+$border-radius:          .6rem;
+$toc-color:              $mk-teal;
+
+/*-- scss:rules --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap');
+
+body { -webkit-font-smoothing: antialiased; }
+
+/* Long-form reading: serif body inside articles only */
+main.content p,
+main.content li,
+main.content blockquote {
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 1.06rem;
+  line-height: 1.72;
+}
+
+/* ============================================================
+   Home hero — headshot beside the intro (jhelvy-style)
+   ============================================================ */
+.mk-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1rem 0 2.5rem;
+}
+.mk-hero__photo {
+  flex: 0 0 260px;
+  max-width: 260px;
+}
+.mk-hero__photo img {
+  width: 100%;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  box-shadow: 0 .5rem 1.5rem rgba(22, 48, 61, .18);
+}
+.mk-hero__text { flex: 1 1 320px; }
+.mk-hero__text h1 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  letter-spacing: -.02em;
+  margin-bottom: .75rem;
+}
+main.content .mk-hero__text p,
+.mk-hero__text p {
+  font-family: $font-family-sans-serif;
+  font-size: 1.12rem;
+  line-height: 1.65;
+  max-width: 40rem;
+}
+
+@media (max-width: 575px) {
+  .mk-hero { gap: 1.5rem; text-align: center; }
+  .mk-hero__photo { margin: 0 auto; flex-basis: 190px; max-width: 190px; }
+}
+
+/* Topic pills on the home page */
+.mk-topics ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.mk-topics li {
+  background: rgba(15, 118, 110, .09);
+  color: $mk-teal;
+  border-radius: 20px;
+  padding: .3em 1em;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  font-family: $font-family-sans-serif;
+}
+
+/* ============================================================
+   Navbar
+   ============================================================ */
+.navbar { box-shadow: 0 1px 0 rgba(0,0,0,.06); }
+.navbar-brand { font-weight: 700; color: $mk-slate; letter-spacing: -.01em; }
+.navbar .nav-link { font-weight: 500; }
+.navbar .nav-link.active { color: $mk-amber !important; font-weight: 700; }
+
+/* ============================================================
+   Listing grid cards
+   ============================================================ */
+.quarto-grid-item.card {
+  box-shadow: 0 .125rem .5rem rgba(22, 48, 61, .08);
+  transition: transform .2s ease, box-shadow .2s ease;
+  overflow: hidden;
+}
+.quarto-grid-item.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 .9rem 1.75rem rgba(22, 48, 61, .16);
+}
+.quarto-grid-item .card-img-top,
+.quarto-grid-item img.thumbnail-image {
+  height: 210px;
+  object-fit: cover;
+}
+.quarto-grid-item .listing-title { font-weight: 700; color: $mk-slate; }
+.quarto-grid-item .listing-title:hover { color: $mk-amber; }
+.quarto-grid-item .listing-categories .listing-category {
+  background: rgba(15, 118, 110, .10);
+  color: $mk-teal;
+  border: 0;
+  border-radius: 20px;
+  padding: .25em .9em;
+  font-weight: 600;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+
+.quarto-listing-category-title { color: $mk-slate; font-weight: 700; }
+.quarto-listing-category .category { font-size: .95rem !important; padding: .15rem 0; color: $mk-ink; }
+.quarto-listing-category .category:hover,
+.quarto-listing-category .category.active { color: $mk-amber; }
+
+/* ============================================================
+   Article typography
+   ============================================================ */
+#title-block-header .quarto-title .title { letter-spacing: -.02em; }
+main.content blockquote {
+  border-left: 4px solid $mk-teal-lt;
+  background: $mk-mist;
+  padding: .9rem 1.25rem;
+  margin: 1.6rem 0;
+  font-style: italic;
+}
+main.content img { border-radius: .4rem; }
+main.content figcaption {
+  font-family: $font-family-sans-serif;
+  font-size: .85rem;
+  color: lighten($mk-ink, 22%);
+}
+
+/* ============================================================
+   Simple link-list used by Projects / Books / CV
+   ============================================================ */
+.mk-entry {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid rgba(22, 48, 61, .10);
+}
+.mk-entry:last-child { border-bottom: 0; }
+.mk-entry__thumb { flex: 0 0 170px; max-width: 170px; }
+.mk-entry__thumb img { width: 100%; border-radius: .4rem; object-fit: cover; }
+.mk-entry__body { flex: 1 1 auto; }
+.mk-entry__body h3 { margin: 0 0 .3rem; font-size: 1.22rem; }
+.mk-entry__body p { margin: 0 0 .5rem; }
+.mk-entry__meta {
+  font-family: $font-family-sans-serif;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: $mk-teal;
+  font-weight: 600;
+}
+@media (max-width: 575px) {
+  .mk-entry { flex-direction: column; gap: .75rem; }
+  .mk-entry__thumb { flex-basis: auto; max-width: 100%; }
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.nav-footer, .footer { font-size: .9rem; }
+
+/* ============================================================
+   Specificity fixes — `main.content img` / `main.content p`
+   are more specific than the component rules above, so the
+   hero photo and the listing cards need to out-rank them.
+   ============================================================ */
+main.content .mk-hero__photo img,
+.mk-hero__photo img {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #fff;
+}
+
+/* Listing cards stay sans-serif; the serif is for article prose only. */
+main.content .quarto-grid-item p,
+main.content .quarto-grid-item .listing-description,
+main.content .quarto-grid-item .listing-title,
+.quarto-grid-item .listing-description,
+.quarto-grid-item p {
+  font-family: $font-family-sans-serif;
+  font-size: .95rem;
+  line-height: 1.55;
+}
+
+/* Image links in entry thumbnails must not sprout an external-link icon. */
+.mk-entry__thumb a::after,
+.mk-entry__thumb a.external::after { content: none !important; }
+.mk-entry__thumb a { display: block; }

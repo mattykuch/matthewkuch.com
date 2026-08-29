@@ -1,0 +1,53 @@
+---
+pagetitle: "Health Financing & Global Health Consultant"
+description: "Management consultant in global health and writer. Health financing, political economy, data visualisation and supply chains."
+page-layout: full
+toc: false
+listing:
+  id: recent-posts
+  contents: "posts/*/index.qmd"
+  type: grid
+  grid-columns: 3
+  sort: "date desc"
+  max-items: 3
+  fields: [image, date, title, description, categories]
+  image-height: "200px"
+  feed: false
+---
+
+::: {.mk-hero}
+::: {.mk-hero__photo}
+![](assets/matthew-kuch.png){fig-alt="Portrait of Matthew Kuch"}
+:::
+::: {.mk-hero__text}
+# Matthew Kuch
+
+I am a management consultant working in global health, and a writer. For more
+than a decade I have worked on how health systems are financed and how they
+deliver, at [Gavi, the Vaccine Alliance](https://www.gavi.org) in Geneva, the
+[Clinton Health Access Initiative](https://www.clintonhealthaccess.org) in
+Uganda and Lesotho, and Deloitte Consulting before that.
+
+I write about where money, politics and public health meet, and I use data and
+visual storytelling to make those arguments land. Most of what I publish starts
+as a question I could not answer from a spreadsheet.
+
+::: {.mk-topics}
+- Health Financing
+- Global Health
+- Political Economy
+- Data Visualization
+- Supply Chain Management
+:::
+
+[Read more about me](about.qmd){.btn .btn-primary .mt-3} &nbsp;
+[View the blog](blog.qmd){.btn .btn-outline-secondary .mt-3}
+:::
+:::
+
+## Recent writing
+
+::: {#recent-posts}
+:::
+
+[All posts →](blog.qmd)

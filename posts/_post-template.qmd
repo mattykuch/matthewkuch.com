@@ -1,0 +1,51 @@
+---
+title: "REPLACE WITH THE ARTICLE TITLE"
+date: "YYYY-MM-DD"                      # publish date
+categories: [Health Financing]          # pick from the controlled list below
+image: "images/cover.jpg"               # drop a cover image into this post's images/ folder
+image-alt: "Describe the cover image in a few words."
+description: "One-sentence hook shown on the blog card and in search results."
+draft: true                             # HIDDEN until you DELETE this line — do that when the post is finished
+# author defaults to "Matthew Kuch" (set here only to override)
+---
+
+<!--
+================  HOW TO USE THIS TEMPLATE  ================
+1. Copy this folder pattern:  posts/<your-slug>/  with index.qmd + images/
+2. Replace the front-matter above (keep the quotes).
+3. Paste the article text BELOW this comment block.
+4. Tidy the pasted text using the cheatsheet below.
+5. Delete the `draft: true` line when it is ready to publish.
+
+Controlled category list (use one or more, exact spelling):
+  Health Financing | Global Health | Political Economy |
+  Data Visualization | Supply Chain Management |
+  Tax & Domestic Resource Mobilisation | Vaccines & Immunisation |
+  Maternal & Child Health
+
+LinkedIn -> Markdown cheatsheet:
+  - Leave a BLANK LINE between paragraphs (Markdown needs it).
+  - A heading line   ->  ## My Heading
+  - A bullet point   ->  - my point
+  - A quote          ->  > the quoted text
+  - A link           ->  [visible text](https://the-url)
+  - An image         ->  ![caption](images/the-file.jpg)   (put file in images/)
+  - A literal dollar sign must be written  \$  (a bare $ turns on math mode)
+===========================================================
+-->
+
+Opening paragraph / hook goes here.
+
+## First section
+
+Body text...
+
+> Optional pull-quote from the article.
+
+## Second section
+
+Body text...
+
+## References
+
+- Author, Year. *Title*. Source. Available at: [url](https://url) [Accessed DD Month YYYY].

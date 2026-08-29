@@ -1,0 +1,204 @@
+/* Custom Styles */
+
+/* Hero Section Styles */
+.hero-section {
+    /* Replace the URL with your desired background image */
+    background: url('assets/network-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .hero-section::before {
+    /* Overlay to darken the background image for better text contrast */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-section .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Adjust footer text */
+  footer p {
+    margin: 0;
+  }
+  
+  /* Optional: Add custom styles for Blog and Testimonials sections */
+  #blog .card-img-top {
+    width: 100%;
+    height: 220px;   
+    border-radius: 0;
+}
+/* Remove these testimonials rules since they're no longer needed */
+/* #testimonials .card {
+    border-radius: 0;
+}
+  
+#testimonials blockquote {
+    font-style: italic;
+    margin: 0;
+} */
+
+  .client-logo {
+    max-height: 80px;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+/* Blog Section Styles */
+/* Blog Section Styles */
+/* Blog Section Styles */
+.blog-scroll {
+  position: relative;
+  padding: 20px 0;
+}
+
+.blog-scroll .d-flex {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #6c757d #f8f9fa;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.blog-scroll .d-flex::-webkit-scrollbar {
+  height: 8px;
+}
+
+.blog-scroll .d-flex::-webkit-scrollbar-track {
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.blog-scroll .d-flex::-webkit-scrollbar-thumb {
+  background-color: #6c757d;
+  border-radius: 4px;
+}
+
+.blog-scroll .col-md-4 {
+  flex: 0 0 auto;
+  width: 300px;
+}
+
+.blog-scroll .card {
+  height: 100%;
+  margin-right: 0;
+}
+
+/* Services Section Styles */
+.services-scroll {
+  position: relative;
+  padding: 20px 0;
+}
+
+.services-scroll .d-flex {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #6c757d #f8f9fa;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.services-scroll .d-flex::-webkit-scrollbar {
+  height: 8px;
+}
+
+.services-scroll .d-flex::-webkit-scrollbar-track {
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.services-scroll .d-flex::-webkit-scrollbar-thumb {
+  background-color: #6c757d;
+  border-radius: 4px;
+}
+
+.services-scroll .col-lg-3 {
+  flex: 0 0 auto;
+  min-width: 300px;
+}
+.service-card {
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(13, 110, 253, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.service-icon i {
+  font-size: 2rem;
+  color: #0d6efd;
+}
+
+.service-card .card-title {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.service-card .card-text {
+  color: #6c757d;
+}
+
+/* Blog Page Styles */
+.nav-pills .nav-link {
+  color: #6c757d;
+  margin: 0 0.5rem;
+  border-radius: 20px;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #0d6efd;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.badge {
+  font-weight: 500;
+  padding: 0.5em 1em;
+}
+
+/* Category Badge Colors */
+.badge.bg-primary { background-color: #0d6efd !important; }
+.badge.bg-success { background-color: #198754 !important; }
+.badge.bg-info { background-color: #0dcaf0 !important; }
+.badge.bg-warning { background-color: #ffc107 !important; }
+
+/* Featured Post Styles */
+.featured-post img {
+  height: 300px;
+  object-fit: cover;
+}

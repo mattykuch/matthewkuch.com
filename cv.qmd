@@ -1,0 +1,98 @@
+---
+title: "CV"
+pagetitle: "CV — Global Health Management Consultant"
+description: "Curriculum vitae of Matthew Kuch: management consultant in global health, previously Gavi, Clinton Health Access Initiative and Deloitte Consulting."
+toc: true
+toc-depth: 2
+---
+
+[Download CV as PDF](assets/matthew-kuch-cv.pdf){.btn .btn-primary}
+
+Strategy and implementation management consultant with over 13 years across
+private and public sector programmes. I work with global, national and local
+leadership teams, governments, development partners and donors on coordination
+and accountability systems, through technical assistance in strategy
+development, programme delivery, process improvement and performance
+management.
+
+**Areas of expertise:** programme strategy and delivery · global public health ·
+grants and portfolio financial management · sustainable health systems
+financing.
+
+## Experience
+
+### Partner and Strategic Advisor {.mt-4}
+**BK Advisors** · July 2024 – present
+
+Advisory work with global health clients on strategy, delivery and financial
+management. Selected engagements:
+
+- **Clinton Health Access Initiative, Papua New Guinea** (2025) — HPV vaccine
+  scale-up strategy for cervical cancer prevention.
+- **UNICEF** (2025) — polio vaccine management and last-mile delivery strategy.
+- **Gavi, the Vaccine Alliance** (2024) — grants and portfolio financial
+  management.
+
+### Programme Manager, Country Support {.mt-4}
+**Gavi, the Vaccine Alliance** · December 2021 – June 2024 · Geneva
+
+- Managed the Kenya and Lesotho country portfolios, over US$60 million a year.
+- Led joint appraisals, mid-term reviews and health system strengthening
+  investment plans.
+- Supported COVAX engagement through the pandemic response.
+- Seconded to the Lesotho Ministry of Health as Gavi Country Liaison Officer.
+
+### Technical Manager {.mt-4}
+**Clinton Health Access Initiative** · August 2019 – July 2021 · Uganda
+
+- Led the vaccines delivery and supply chain workstream.
+- Ran the programme management office.
+- Drove the pilot-to-scale decision on last-mile vaccine delivery.
+
+### Senior Program Coordinator {.mt-4}
+**Clinton Health Access Initiative** · July 2017 – July 2019 · Uganda
+
+- Performance management for the Expanded Programme on Immunisation.
+- Vaccine supply chain and logistics; ordering and stock management with
+  National Medical Stores and UNEPI.
+
+### Program Analyst {.mt-4}
+**Clinton Health Access Initiative** · July 2015 – July 2017 · Lesotho and Uganda
+
+- Built data collection and analysis tooling in SurveyCTO/ODK, R and Excel.
+- Produced GIS maps, charts and dashboards for programme decision-making.
+- Developed the Lesotho health financing planning and budgeting tool, and led
+  resource mapping.
+
+### Management Consultant {.mt-4}
+**Deloitte Consulting** · April 2012 – July 2014 · Uganda and Tanzania
+
+- Grants management for the USAID/DFID-funded Civil Society Fund.
+- Pre-award assessments, monitoring and evaluation, and advisory support.
+
+## Education
+
+| | |
+|---|---|
+| **MSc, International Development and Management** | Lund University, Sweden · 2014–2016 |
+| **BSc, Accounting and Finance** (General Course) | London School of Economics · 2009–2010 |
+| **BA, Physics and Economics** | Wheaton College, Massachusetts · 2007–2011 |
+
+## Awards
+
+- United World Colleges Scholar, 2005–2007
+- Davis Scholar, 2007–2011
+- Eunice Caldwell Leadership Award, Wheaton College, May 2009
+
+## Skills
+
+**Analysis and tooling** — R (advanced), Excel (advanced), Quarto, SQL, GIS,
+SurveyCTO/ODK, D3.js and Svelte for interactive data visualisation.
+
+**Languages** — English.
+
+## Contact
+
+[kuch.matthew@gmail.com](mailto:kuch.matthew@gmail.com) ·
+[LinkedIn](https://www.linkedin.com/in/matthew-k-ab0134122/) ·
+[GitHub](https://github.com/mattykuch) · Kampala, Uganda

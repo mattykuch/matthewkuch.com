@@ -1,0 +1,108 @@
+---
+title: <span style="color:white">The Displacement Effect</span>
+subtitle: "Exploring the effect in Sub-Sarahan African (SSA) Countries (2000-2022)"
+
+author: 
+- name: "Matthew Kuch"
+  email: kuch.matthew@gmail.com
+date: 08/12/2025
+
+title-block-banner: true
+title-block-banner-color: "black"
+
+format: html
+html:
+code-fold: true
+code-summary: "Code"
+echo: true
+css: style.css
+toc: true
+toc-location: left
+number-sections: false
+editor: visual
+fig-cap-location: margin
+---
+
+## The Spark of Curiosity
+
+There's probably something many don't know about me; I have a peculiar past-time or hobby, if you like.
+
+Whenever I come across a new idea or hypothesis or theory - I try to look for available data to test it, just out of curiosity, to see the limits of the theory or edge cases.
+
+Same it true for the "displacement effect", which I wrote about this week on Linkedin.
+
+In this more technical post, I'll walk you through my analysis of the WHO GHED (Global Health Expenditure Data) from 2000 to 2022 to test the claim I made in the article, that:
+
+>  *"an increase is funding to public health from external donors, leads to the government spending less on public health."*
+
+## The Core Question
+
+The core question I'll be asking is this:
+
+> “If donors give more money to a country’s health budget one year, does the government spend less of its own money the next year?”
+
+Like I mentioned in my article, its kind of like if your child received a partial scholarship as a contribution to their school fees, for say good performance, but instead of stepping up as a parent and paying the balance - you instead stop paying school fees altogether and use the money you had to buy the new iPhone.\
+
+That’s the **displacement effect,** in a nutshell i.e. when outside help replaces rather than adds to your own domestic efforts.
+
+## **The Dataset**
+
+From WHO’s Global Health Expenditure Database for 6 East African countries (2012–2022), we use:
+
+-   **Government health spending per person** (money from the country itself)
+
+-   **External health spending per person** (money from donors and aid agencies).
+
+## **The Analysis Steps**
+
+The R code does three big things:
+
+1.   **Prepares the data**
+
+    -   Picks the countries and years we care about
+
+    -   Calculates **year-to-year changes** in government spending.\
+        (Example: If 2020 gov’t spend was \$55 and 2019 was \$50 → change = +\$5.)
+
+    -   Records **last year’s donor spending** for each year (the “lag”)
+
+2.   **Runs a regression model**
+
+    -   Compares each country **to itself** over time (this removes differences between countries).
+
+    -   Looks at the relationship between **last year’s donor funding** and **this year’s change in gov’t spending**.
+
+        -   If the result is **negative**, it suggests a displacement effect.
+
+3.   **Makes visualizations** to see the patterns.
+
+## **The Results and How to Read Them**
+
+### **A. The Regression Table**
+
+-    **Key number (beta)** = how much government spending changes when donor money goes up by \$1 per person (from the year before).
+
+-   **If beta is negative** (e.g., -0.40), it means:\
+    *For every extra \$1 per person from donors, government spending drops by 40 cents the next year.*
+
+-   **Confidence interval** shows the range we’re fairly sure the true effect is in.
+
+### **B. Country-Specific Slopes (Visualization)** 
+
+-    Each country gets its own “beta” line showing how its gov’t spending reacts to donor funding.
+
+-    If the dot is left of zero → displacement effect.
+
+-   If the dot is right of zero → no displacement (donor funds seem to add to gov’t funds).
+
+## **How to Interpret**
+
+-    **Negative relationship = displacement:** government spending drops when donors give more.
+
+-   **Positive relationship = crowding in:** donor funds encourage governments to also spend more.
+
+-   This isn’t about “good” or “bad” - it’s about understanding **how funding systems react** so policies can be designed better.
+
+# References/Sources/Citations:
+
+-   ....
