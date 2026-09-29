@@ -5,21 +5,7 @@ description: "Long-form projects, written and published as free open web books."
 toc: false
 ---
 
-Both are free to read in the browser. No paywall, no sign-up.
-
-::: {.mk-entry}
-::: {.mk-entry__body}
-[RESILIENCE · ~24,000 WORDS]{.mk-entry__meta}
-
-### [Bounce Back](https://bk-advisors.github.io/bounce-back/)
-
-Sixteen chapters on adaptability, drawn from the careers of basketball's most
-durable players and read across into entrepreneurship and decision-making. What
-separates people who recover from a setback from people who are defined by it.
-
-[Read it →](https://bk-advisors.github.io/bounce-back/)
-:::
-:::
+It's free to read in the browser. No paywall, no sign-up.
 
 ::: {.mk-entry}
 ::: {.mk-entry__body}

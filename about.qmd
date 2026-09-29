@@ -94,4 +94,4 @@ I live in Uganda with my family.
 
 The best ways to reach me are [email](mailto:kuch.matthew@gmail.com) and
 [LinkedIn](https://www.linkedin.com/in/matthew-k-ab0134122/). My code is on
-[GitHub](https://github.com/mattykuch), and my [CV](cv.qmd) has the full detail.
+[GitHub](https://github.com/mattykuch).

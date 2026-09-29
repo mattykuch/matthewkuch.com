@@ -1,0 +1,80 @@
+{
+ "title": "Tracked funding for malaria control in Uganda, US$ millions",
+ "what": "Funding for malaria control as reported in the WHO World Malaria Report funding annex: national malaria programme (government, NMP line), Global Fund malaria disbursements, and the US President's Malaria Initiative (PMI). Excludes health-worker salaries and facility running costs paid by government, patient care, and household out-of-pocket spending.",
+ "units": "nominal US$ millions",
+ "years": [
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "domestic": [
+  7.59,
+  7.28,
+  7.24,
+  7.68,
+  8.12,
+  1.61,
+  1.51,
+  2.17,
+  2.17
+ ],
+ "globalFund": [
+  76.26,
+  55.05,
+  65.88,
+  41.43,
+  95.95,
+  66.17,
+  85.12,
+  115.37,
+  56.62
+ ],
+ "pmi": [
+  33,
+  34,
+  33,
+  33,
+  33,
+  31,
+  31,
+  31,
+  31
+ ],
+ "cpiU": {
+  "2016": 240,
+  "2017": 245.1,
+  "2018": 251.1,
+  "2022": 292.7,
+  "2023": 304.7,
+  "2024": 313.7
+ },
+ "caveats": [
+  "The government (NMP) line is a narrow programme budget line; it fell from about 8.1 to 1.6 million between 2020 and 2021 because of how it was reported, not because of a verified cut. Do not read it as total government spending on malaria.",
+  "PMI figures are budgets as reported by the country, not disbursements.",
+  "Global Fund disbursements are lumpy from year to year, so comparisons use three-year averages.",
+  "UK bilateral funding (about 30 million in 2016, near zero after 2020) is left out of the totals, which makes the fall in money per case an understatement."
+ ],
+ "sources": {
+  "funding": "WHO World Malaria Report funding annexes, the latest edition covering each year (see edition): Global Fund = contributions reported by donors; PMI = contributions reported by countries; Government = national malaria programme (NMP) line",
+  "globalFund": "Same annexes, donor-reported Global Fund column (updated 29 Sept 2026; earlier values mixed older editions and Global Fund disbursement data)",
+  "cases": "WHO estimated malaria cases (Global Health Observatory, MALARIA_EST_CASES)",
+  "cpi": "US Bureau of Labor Statistics, CPI-U annual averages"
+ },
+ "edition": {
+  "2016": "WMR 2019 Annex 3C",
+  "2017": "WMR 2020 Annex 3C",
+  "2018": "WMR 2020 Annex 3C",
+  "2019": "WMR 2022 Annex 4C",
+  "2020": "WMR 2023 Annex 4C",
+  "2021": "WMR 2024 Annex 4C",
+  "2022": "WMR 2025 Annex 4F",
+  "2023": "WMR 2025 Annex 4F",
+  "2024": "WMR 2025 Annex 4F"
+ }
+}

@@ -1,0 +1,33 @@
+---
+title: "Uganda Nearly Halved Its Malaria Rate. So Why Are Just as Many of Us Getting Sick?"
+date: "2026-09-29"
+categories: [Global Health, Health Financing, Data Visualization]
+image: "images/cover.jpg"
+image-alt: "Two blocks of dots for 2000 and 2025: Uganda's population doubled while the number of people with malaria stayed about the same."
+description: "An interactive data story: 26 years of malaria data for every district in Uganda, and who is paying to keep the gains."
+toc: false
+---
+
+Like many Ugandans, I have been getting malaria, and recovering from it, for most of my life. For a lot of us, it just keeps coming back.
+
+In August I was down with it once again. About six weeks before that, it was my three-year-old daughter. That is when it gets really tough, because this time it is your child who is sick. Luckily, we both recovered.
+
+In July, a 14-year-old student at Gayaza High School, a short drive from my home, did not. She died of severe malaria. It is gut-wrenching to think about what her parents are still going through. Losing a child like that is something you never fully recover from.
+
+Her death made me curious. How big a problem is malaria still in Uganda, and have we actually made progress over the years?
+
+So I went looking for the data, and I found 26 years of it, for every district in Uganda, thanks to the Malaria Atlas Project.
+
+Here is what I found. Uganda has nearly halved its malaria rate, from 502 cases for every 1,000 people in 2000 to 258 in 2025. That is a real achievement. But over the same period, our population doubled, from 23.5 million to 46.6 million. So about as many Ugandans got malaria in 2025 (12.0 million) as in 2000 (11.8 million).
+
+In other words, the rate fell, but the number of people getting sick has barely moved in 25 years.
+
+I triangulated the Malaria Atlas data with other sources, and they show the same trend. The World Health Organization's estimates tell a similar story: the rate fell from 483 to 264 cases for every 1,000 people between 2000 and 2024, while the number of cases rose from 11.6 million to 13.2 million. And Uganda's latest Malaria Indicator Survey (2024–25) found malaria in 13% of children under five, up from 10% in 2018–19.
+
+District by district, the picture is not pretty. Since 2015, 69 of our 135 districts have lost ground, and Wakiso, where I live, is one of them. Meanwhile, the money holding the line is mostly not ours: in 2022–24, about 98% of the tracked funding for malaria control came from donors.
+
+To make the data easier to see, I built an interactive data story with the help of Claude Code. You can click through it at your own pace, drag the map through the years, and look up your own district.
+
+[Open the interactive story →](/lab/malaria-in-uganda/){.btn .btn-primary .mt-2 .mb-3}
+
+It takes about five minutes. If you look up your district, I would love to hear what you find.

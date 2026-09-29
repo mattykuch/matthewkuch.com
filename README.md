@@ -31,7 +31,7 @@ feed all regenerate themselves — there is no post list to edit.
 | `blog.qmd` | Auto-generated listing of `posts/*`, plus the RSS feed |
 | `projects.qmd` | Interactive data stories, hosted separately |
 | `books.qmd` | Long-form book projects |
-| `cv.qmd` | CV, with the PDF in `assets/` |
+| `cv.qmd` | CV, with the PDF in `assets/`. **Unpublished since 29 Sept 2026**: not in the render list or navbar, and the PDF is excluded from resources in `_quarto.yml` |
 | `posts/_metadata.yml` | Shared post defaults — author, format, freeze |
 | `posts/_post-template.qmd` | Scaffold for a new post |
 | `theme/brand.scss` | Colours, fonts, components |

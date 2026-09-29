@@ -10,6 +10,24 @@ standalone interactive story, built in R, D3 or Svelte and hosted separately.
 
 ::: {.mk-entry}
 ::: {.mk-entry__thumb}
+[![](assets/projects/malaria-uganda.jpg){fig-alt="Dots for Uganda's population in 2000 and 2025, with the people who had malaria in red"}](/lab/malaria-in-uganda/)
+:::
+::: {.mk-entry__body}
+[CLICK-THROUGH STORY · MALARIA · 135 DISTRICTS]{.mk-entry__meta}
+
+### [Malaria in Uganda](/lab/malaria-in-uganda/)
+
+Uganda nearly halved its malaria rate between 2000 and 2025, yet about as many people
+fell sick in 2025 as in 2000, because the population doubled. This story walks
+through 26 years of data, district by district, and asks who will keep paying
+to hold the gains. You can look up your own district.
+
+[Explore the story →](/lab/malaria-in-uganda/)
+:::
+:::
+
+::: {.mk-entry}
+::: {.mk-entry__thumb}
 [![](assets/projects/hpv-png.png){fig-alt="Cover image for The Case for HPV Vaccination in Papua New Guinea"}](https://bk-advisors.github.io/hpv-png-story/)
 :::
 ::: {.mk-entry__body}
