@@ -1,0 +1,35 @@
+---
+title: "Measles in Africa: From 1.4 Million Cases to 35,000"
+date: "2026-03-14"
+categories: [Vaccines & Immunisation, Global Health, Data Visualization]
+image: "images/cover.png"
+image-alt: "Bar chart of reported measles cases across 46 African countries, 1980 to 2023, falling from 1.4 million in 1981 to 35,371 in 2016."
+description: "In 1981, measles infected 1.4 million people across Africa in a single year. By 2016, it was 35,000. An interactive heatmap of 44 years and 46 countries."
+toc: false
+---
+
+In 1981, measles infected 1.4 million people across Africa in a single year.
+
+By 2016, that number was 35,000. A 97% drop.
+
+What happened? The WHO/UNICEF Measles Initiative launched mass immunization campaigns starting in 2001.
+
+Countries that used to see thousands of cases per million people (e.g. Malawi, Zambia, Niger, Kenya) saw their numbers collapse within a few years.
+
+It's one of the most dramatic public health achievements of the last half century. But it's hard to appreciate something you can no longer see.
+
+That's why I built this interactive heatmap. 44 years, 46 countries.
+
+You can watch the red tiles fade to blue, country by country, year by year. It makes the invisible visible.
+
+[Explore the interactive heatmap →](/lab/africa-measles/){.btn .btn-primary .mt-2 .mb-3}
+
+![](images/heatmap.png){fig-alt="Heatmap of reported measles cases per million people for each African country, 1980 to 2023. Red tiles before 2001 give way to blue after the Measles Initiative."}
+
+## Notes and Sources
+
+- **Data:** reported measles cases from the World Health Organization's Global Health Observatory, and population from the World Bank. 46 African countries, 1980 to 2023. The heatmap shows the countries with at least 15 years of reporting.
+- These are **reported** cases, so they depend on how well each country's surveillance worked in a given year. The true number of infections was higher.
+- Much of the fall came in two waves. Reported cases had already fallen from 1.4 million in 1981 to about 490,000 in 2001, as routine childhood immunisation spread in the 1980s. After the Measles Initiative's campaigns began in 2001, they fell a further 93% to 35,371 in 2016.
+- The gains are not permanent. Reported cases rose again to 615,194 in 2019 and were 416,476 in 2023, as outbreaks returned where vaccination coverage had slipped.
+- The data and code are on [GitHub](https://github.com/bk-advisors/africa-measles). First posted on LinkedIn in March 2026.

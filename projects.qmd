@@ -46,19 +46,19 @@ entirely preventable.
 
 ::: {.mk-entry}
 ::: {.mk-entry__thumb}
-[![](assets/projects/measles.png){fig-alt="Heatmap of measles incidence across African countries, 1980 to 2024"}](https://bk-advisors.github.io/africa-measles/)
+[![](assets/projects/measles.png){fig-alt="Heatmap of measles incidence across African countries, 1980 to 2023"}](/lab/africa-measles/)
 :::
 ::: {.mk-entry__body}
 [INTERACTIVE HEATMAP · 44 YEARS, 46 COUNTRIES]{.mk-entry__meta}
 
-### [Measles in Africa](https://bk-advisors.github.io/africa-measles/)
+### [Measles in Africa](/lab/africa-measles/)
 
 In 1981 measles infected 1.4 million people across Africa in a single year. By
 2016 it was 35,000, a 97% fall. This heatmap lets you watch the red tiles fade
 to blue, country by country and year by year. It makes one of the great public
 health achievements visible again.
 
-[Explore the chart →](https://bk-advisors.github.io/africa-measles/)
+[Explore the chart →](/lab/africa-measles/)
 :::
 :::
 
