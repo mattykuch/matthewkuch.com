@@ -64,18 +64,36 @@ health achievements visible again.
 
 ::: {.mk-entry}
 ::: {.mk-entry__thumb}
-[![](assets/projects/mmr.png){fig-alt="Interactive chart of maternal mortality ratios across African countries"}](https://bk-advisors.github.io/africa-mmr/)
+[![](assets/projects/mmr.png){fig-alt="Interactive chart of maternal mortality ratios across African countries"}](/lab/africa-mmr/)
 :::
 ::: {.mk-entry__body}
 [INTERACTIVE CHART · MATERNAL HEALTH]{.mk-entry__meta}
 
-### [Maternal Mortality in Africa](https://bk-advisors.github.io/africa-mmr/)
+### [Maternal Mortality in Africa](/lab/africa-mmr/)
 
 In 2023 a woman giving birth in Nigeria was 25 times more likely to die than one
 giving birth in Cabo Verde. Only 4 of 47 African countries meet the SDG 3.1
 target. This chart makes the gap impossible to look away from.
 
-[Explore the chart →](https://bk-advisors.github.io/africa-mmr/)
+[Explore the chart →](/lab/africa-mmr/)
+:::
+:::
+
+::: {.mk-entry}
+::: {.mk-entry__thumb}
+[![](assets/projects/mmr-2030.png){fig-alt="Scatter chart of African countries' observed versus required rate of reduction in maternal mortality, most in the off-track zone"}](/lab/africa-mmr-2030/)
+:::
+::: {.mk-entry__body}
+[CLICK-THROUGH STORY · MATERNAL HEALTH · 54 COUNTRIES]{.mk-entry__meta}
+
+### [Africa and SDG 3.1: The Road to 2030](/lab/africa-mmr-2030/)
+
+The follow-up to the chart above. Of Africa's 54 countries, 10 are on pace to
+bring maternal deaths below 70 per 100,000 live births by 2030. At current
+rates, roughly 530,000 more mothers will die by 2030 than if every country were
+on pace. Watch every country race towards the deadline.
+
+[Explore the story →](/lab/africa-mmr-2030/)
 :::
 :::
 
@@ -94,15 +112,19 @@ largest driver of under-five deaths.
 :::
 
 ::: {.mk-entry}
+::: {.mk-entry__thumb}
+[![](assets/projects/causes-of-death.png){fig-alt="Icicle chart of 8.3 million deaths in the WHO African Region in 2021, split by cause group"}](/lab/africa-causes-of-death/)
+:::
 ::: {.mk-entry__body}
-[VISUAL ESSAY · MORTALITY]{.mk-entry__meta}
+[DATA STORY + EXPLORABLE · MORTALITY · 8.3 MILLION DEATHS]{.mk-entry__meta}
 
-### [Causes of Death in Africa](https://bk-advisors.github.io/occupations/apps/africa-causes-of-death-story/)
+### [Causes of Death in Africa](/lab/africa-causes-of-death/)
 
-What Africans actually die of, how that has shifted as infectious disease
-mortality has fallen, and why the rise of non-communicable disease is arriving
-faster than most health systems are budgeting for.
+What 8.3 million deaths across the WHO African Region in 2021 looked like, by
+cause and by age band. We organise health attention around outbreaks like
+Ebola, while the steady, predictable causes do most of the killing. Read the
+story, or poke at every cause the WHO tracks in the explorable version.
 
-[Explore the story →](https://bk-advisors.github.io/occupations/apps/africa-causes-of-death-story/)
+[Read the story →](/lab/africa-causes-of-death/) · [Explore the numbers →](/lab/africa-causes-of-death-explore/)
 :::
 :::

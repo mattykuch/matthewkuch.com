@@ -1,0 +1,36 @@
+---
+title: "Will Africa Hit the SDG Maternal Mortality Target by 2030?"
+date: "2026-05-27"
+categories: [Maternal & Child Health, Global Health, Data Visualization]
+image: "images/cover.png"
+image-alt: "Scatter chart of African countries: observed rate of reduction in maternal mortality against the rate needed to reach 70 by 2030. Almost every country sits in the off-track zone."
+description: "Of Africa's 54 countries, 10 are on pace to meet SDG 3.1 by 2030. An interactive look at the road from 2023 to 2030."
+toc: false
+---
+
+A few weeks ago I posted a [snapshot of where every African country stood on maternal mortality](/posts/africa-maternal-mortality/). The piece ended with a question I didn't actually answer: will we hit the SDG promise by 2030?
+
+I went and did some of the predictive analytics.
+
+Of Africa's 54 countries, 10 are on pace. The other 44 are not. Under current reduction rates, roughly 530,000 mothers will die between 2024 and 2030 in excess of what we'd see if every country was actually on a 2030 accelerated reduction trajectory. Nigeria alone accounts for over half of that gap.
+
+To hit SDG 3.1 from where most of the continent sits today, we'd need to cut maternal mortality by about 11.6% every single year. The actual rate across the last two decades is closer to 2.2%. Since 2016 it has slowed to 1.5%. We are reducing at one-fifth the pace we promised.[^correction]
+
+[^correction]: **Correction (1 October 2026).** I have left this paragraph as I first posted it on LinkedIn, but two things in it were wrong. First, the 2.2% and 1.5% figures are worldwide rates, not Africa's: the global maternal mortality ratio fell by an average of 2.2% a year between 2000 and 2023, and by only 1.5% a year since 2016. Second, the pace needed is faster than I wrote. According to the UN agencies that produce these estimates, the world needs to cut maternal mortality by about 14.8% every year from 2024 to 2030 to reach the SDG target, not 11.6%. So the real gap is wider than I said: since 2016 we have been reducing at about one-tenth of the pace we promised, not one-fifth. The rest of the post (10 of 54 countries on pace, about 530,000 excess deaths, Nigeria over half) comes from the data behind the interactive and still stands. Source: WHO, UNICEF, UNFPA, World Bank Group and UN DESA, [*Trends in Maternal Mortality 2000 to 2023*](https://www.unfpa.org/publications/trends-maternal-mortality-2000-2023) (2025).
+
+The part I keep coming back to: ten countries are doing it. Some started below the line. Some, like Mozambique and Zambia, started high and reduced fast enough that their long-run trajectory lands them under 70 by 2030. They show the target is achievable.
+
+The Beginnings Fund and many others are working in Africa, every day, to bend the trajectory for the rest. Staffing clinics. Training midwives. Building the referral systems that turn maternal deaths into survivable emergencies.
+
+I built a small interactive viz to make the scale of the problem more visual. You can click through it scene by scene, watch every country race towards 2030, and switch between the long-run pace and the slower pace since 2016.
+
+[Open the interactive viz →](/lab/africa-mmr-2030/){.btn .btn-primary .mt-2 .mb-3}
+
+No mother should die giving life.
+
+## Notes and Sources
+
+- **Data:** World Bank indicator SH.STA.MMRT, which carries the WHO, UNICEF, UNFPA, World Bank Group and UN DESA joint estimates in *Trends in Maternal Mortality 2000 to 2023* (WHO, April 2025). Births are estimated from the World Bank crude birth rate (SP.DYN.CBRT.IN) and total population.
+- **On pace** means a country's observed annual rate of reduction (2000 to 2023) is at least the rate it needs to reach 70 deaths per 100,000 live births by 2030. This is my own classification; the joint estimates do not publish it.
+- The ten countries on pace: Mozambique, Zambia, Sao Tome and Principe, Morocco, Algeria, Libya, Seychelles, Cabo Verde, Tunisia and Egypt.
+- First posted on LinkedIn in May 2026, as a follow-up to [Only 4 of 47 African Countries Meet the SDG Maternal Mortality Target](/posts/africa-maternal-mortality/).

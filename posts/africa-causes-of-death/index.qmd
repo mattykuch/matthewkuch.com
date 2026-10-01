@@ -1,0 +1,30 @@
+---
+title: "Africa's Causes of Death, 2021"
+date: "2026-07-18"
+categories: [Global Health, Data Visualization]
+image: "images/cover.png"
+image-alt: "Icicle chart of 8.3 million deaths in the WHO African Region in 2021, split into communicable, non-communicable and injury causes."
+description: "An explorable data story on the causes of death in Africa, from the WHO Global Health Estimates 2021."
+toc: false
+---
+
+My latest explorable data story breaks down the causes of death in Africa, drawn from the World Health Organization's Global Health Estimates 2021.
+
+As DRC and Uganda work to contain the latest Ebola outbreak, it's worth remembering the quieter killers too. The communicable and non-communicable diseases that take far more lives across the continent every year, with none of the headlines.
+
+Have a look, and poke at the numbers yourself. There are two versions.
+
+**1. The data story.** A scrolling read on what 8.3 million deaths in 2021 looked like, age band by age band.
+
+[Read the data story →](/lab/africa-causes-of-death/){.btn .btn-primary .mt-2 .mb-3}
+
+**2. The explorable version.** The same numbers with no narrative. Every cause of death the WHO tracks, sized by its share of deaths. Click a block to zoom in, hover to see the age breakdown, or search for a cause by name.
+
+[Explore the numbers →](/lab/africa-causes-of-death-explore/){.btn .btn-primary .mt-2 .mb-3}
+
+## Notes and Sources
+
+- **Data:** World Health Organization, *Global Health Estimates 2021: Deaths by Cause, Age, Sex, by Country and by Region, 2000–2021* (2024). Licensed CC BY-NC-SA 3.0 IGO.
+- The figures cover the 47 countries of the WHO African Region, which leaves out Egypt, Libya, Morocco, Tunisia, Sudan, Somalia and Djibouti (WHO counts them in its Eastern Mediterranean Region).
+- There is also a [nine-minute narrated film](https://bk-advisors.github.io/africa-causes-of-death-film/) of the same data, where every dot is 1,000 people.
+- First posted on LinkedIn in July 2026.

@@ -1,0 +1,36 @@
+---
+title: "Only 4 of 47 African Countries Meet the SDG Maternal Mortality Target"
+date: "2026-05-14"
+categories: [Maternal & Child Health, Global Health, Data Visualization]
+image: "images/cover.png"
+image-alt: "Bar chart of maternal deaths per 100,000 live births in African countries in 2023, with Nigeria highest at 993 and the SDG target of 70 marked."
+description: "In 2023, a woman giving birth in Nigeria was 25 times more likely to die than one giving birth in Cabo Verde. An interactive chart of maternal mortality across Africa."
+toc: false
+---
+
+In 2023, a woman giving birth in Nigeria was 25 times more likely to die than one giving birth in Cabo Verde.
+
+Both are African countries, albeit of different sizes, but the gap is still staggering.
+
+The Sustainable Development Goal 3.1 sets a clear target: fewer than 70 maternal deaths per 100,000 live births by 2030.
+
+Today, only 4 of 47 African countries meet that target: Cabo Verde (40), Seychelles (42), Algeria (62), and Mauritius (66).
+
+Meanwhile, Nigeria (993), Chad (748), South Sudan (692), and the Central African Republic (692) report rates that Europe last saw a century ago.
+
+Maternal mortality isn't a mystery. We know what works and can save lives: skilled birth attendants, emergency obstetric care, family planning, and the political and financial commitment to deliver them consistently. The four countries that have crossed the SDG line built systems around exactly these basics.
+
+[Explore the interactive chart →](/lab/africa-mmr/){.btn .btn-primary .mt-2 .mb-3}
+
+It makes the disparity impossible to look away from.
+
+![](images/chart.png){fig-alt="Bar chart: only 4 of 47 African countries meet the SDG maternal mortality target. Nigeria's rate (993) is 25 times Cabo Verde's (40)."}
+
+The [Beginnings Fund](https://beginningsfund.org/) and others are doing something about this. No mother should die giving life.
+
+## Notes and Sources
+
+- **Data:** World Health Organization, Global Health Observatory, indicator MDG_0000000026, "Maternal mortality ratio (per 100,000 live births)", modelled estimates for 2023.
+- The 47 countries are the WHO African Region, which leaves out Egypt, Libya, Morocco, Tunisia, Sudan, Somalia and Djibouti (WHO counts them in its Eastern Mediterranean Region).
+- Hover over any bar in the [interactive chart](/lab/africa-mmr/) to see the WHO uncertainty range for each country.
+- First posted on LinkedIn in May 2026. A follow-up looks ahead to 2030: [Will Africa Hit the SDG Maternal Mortality Target by 2030?](/posts/africa-maternal-mortality-2030/)
