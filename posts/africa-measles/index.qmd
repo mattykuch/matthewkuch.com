@@ -26,6 +26,14 @@ You can watch the red tiles fade to blue, country by country, year by year. It m
 
 ![](images/heatmap.png){fig-alt="Heatmap of reported measles cases per million people for each African country, 1980 to 2023. Red tiles before 2001 give way to blue after the Measles Initiative."}
 
+## Watch the film
+
+Prefer to watch? Here is a narrated film of the story, including what happened after 2016.
+
+{{< video https://www.youtube.com/embed/IwIGgo11PzI title="Out of Sight: How Africa Beat Measles, and Why It Came Back" aspect-ratio="16x9" >}}
+
+*The narration is an AI voice (Google Gemini).*
+
 ## Notes and Sources
 
 - **Data:** reported measles cases from the World Health Organization's Global Health Observatory, and population from the World Bank. 46 African countries, 1980 to 2023. The heatmap shows the countries with at least 15 years of reporting.

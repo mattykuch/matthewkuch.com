@@ -22,6 +22,14 @@ Have a look, and poke at the numbers yourself. There are two versions.
 
 [Explore the numbers →](/lab/africa-causes-of-death-explore/){.btn .btn-primary .mt-2 .mb-3}
 
+## Watch the film
+
+Prefer to watch? Here is a three-minute narrated film of the same data, from the Ebola headlines to the 8.3 million deaths that rarely make the news.
+
+{{< video https://www.youtube.com/embed/5Ey06xCmkwg title="8.3 Million: Drivers of Death in Africa, in 3 Minutes" aspect-ratio="16x9" >}}
+
+*The narration is an AI voice (Google Gemini).*
+
 ## Notes and Sources
 
 - **Data:** World Health Organization, *Global Health Estimates 2021: Deaths by Cause, Age, Sex, by Country and by Region, 2000–2021* (2024). Licensed CC BY-NC-SA 3.0 IGO.

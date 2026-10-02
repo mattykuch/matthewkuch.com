@@ -28,6 +28,14 @@ I built a small interactive viz to make the scale of the problem more visual. Yo
 
 No mother should die giving life.
 
+## Watch the film
+
+Prefer to watch? I made a three-minute narrated film of this story and the one before it, from Nigeria and Cabo Verde to the road to 2030.
+
+{{< video https://www.youtube.com/embed/mvCMYtItptw title="The Road to 2030: Will Africa Meet the SDG Target for Maternal Deaths?" aspect-ratio="16x9" >}}
+
+*The narration is an AI voice (Google Gemini).*
+
 ## Notes and Sources
 
 - **Data:** World Bank indicator SH.STA.MMRT, which carries the WHO, UNICEF, UNFPA, World Bank Group and UN DESA joint estimates in *Trends in Maternal Mortality 2000 to 2023* (WHO, April 2025). Births are estimated from the World Bank crude birth rate (SP.DYN.CBRT.IN) and total population.

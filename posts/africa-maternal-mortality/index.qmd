@@ -33,4 +33,5 @@ The [Beginnings Fund](https://beginningsfund.org/) and others are doing somethin
 - **Data:** World Health Organization, Global Health Observatory, indicator MDG_0000000026, "Maternal mortality ratio (per 100,000 live births)", modelled estimates for 2023.
 - The 47 countries are the WHO African Region, which leaves out Egypt, Libya, Morocco, Tunisia, Sudan, Somalia and Djibouti (WHO counts them in its Eastern Mediterranean Region).
 - Hover over any bar in the [interactive chart](/lab/africa-mmr/) to see the WHO uncertainty range for each country.
+- There is a three-minute narrated film of this post and its follow-up: [The Road to 2030](https://youtu.be/mvCMYtItptw) (narrated by an AI voice).
 - First posted on LinkedIn in May 2026. A follow-up looks ahead to 2030: [Will Africa Hit the SDG Maternal Mortality Target by 2030?](/posts/africa-maternal-mortality-2030/)
